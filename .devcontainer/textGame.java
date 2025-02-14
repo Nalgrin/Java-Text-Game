@@ -43,8 +43,6 @@ public class textGame {
 
         userInput.close();
 
-        //if (chosenCharacter = character1)
-
     }
     
 }
