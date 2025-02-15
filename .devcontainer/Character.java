@@ -1,5 +1,5 @@
 public class Character {
-    String name = "Garrett";
+    String name;
     String description;
     int health;
     int mana;
@@ -31,6 +31,21 @@ public class Character {
 
 
     public void displayinfo(){
+        System.out.println("Character: " + name);
+        System.out.println("Info:" + description);
+        System.out.println("Health:" + health);
+        System.out.println("Mana: " + mana);
+        System.out.println("Strength: " + strength);
+        System.out.println("Agility: " + agility);
+        System.out.println("Intelligence: " + intelligence);
+        System.out.println("Wisdom: " + wisdom);
+        System.out.println("Charisma: " + charisma);
+        System.out.println("Magic Power: " + magicPower);
+        System.out.println("Defense: " + defense);
         
+    }
+
+    public String getName() {
+        return name;
     }
 }

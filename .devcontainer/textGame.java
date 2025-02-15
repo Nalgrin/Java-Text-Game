@@ -1,48 +1,56 @@
 import java.util.Scanner;
+
 public class textGame {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        String character1 = "Elara the Enchantress";
-        String info1 = ("Elara is a skilled sorceress from the mystical Forest of Eldoria. \nShe has spent years studying ancient texts and mastering the art of magic. Her knowledge of spells and potions makes her a valuable ally in the quest.");
-        String character2 = "Thorn the Rouge";
-        String info2 = ("Thorn is a cunning thief who grew up on the streets of a bustling city. He has a knack for stealth and agility, making him an expert at sneaking past enemies and finding hidden treasures.");
-        String character3 = "Garrick the Warrior";
-        String info3 = ("Garrick is a seasoned warrior from a noble lineage. He has trained in combat since childhood and is known for his bravery and strength. He seeks to protect the innocent and restore peace to the land."); 
+        Character elara = new Character("Elara the Enchantress",
+                "Elara is a skilled sorceress from the mystical Forest of Eldoria. \nShe has spent years studying ancient texts and mastering the art of magic. Her knowledge of spells and potions makes her a valuable ally in the quest.",
+                80, 120, 5, 7, 15, 12, 10, 18, 4);
+
+        Character thorn = new Character("Thorn the Rogue",
+                "Thorn is a cunning thief who grew up on the streets of a bustling city. He has a knack for stealth and agility, making him an expert at sneaking past enemies and finding hidden treasures.",
+                70, 50, 6, 15, 8, 7, 12, 5, 5);
+
+        Character garrick = new Character("Garrick the Warrior",
+                "Garrick is a seasoned warrior from a noble lineage. He has trained in combat since childhood and is known for his bravery and strength. He seeks to protect the innocent and restore peace to the land.",
+                100, 30, 15, 8, 6, 5, 7, 3, 12);
+
         String selection;
-        String chosenCharacter = ("");
+        Character chosenCharacter = null;
 
-
-        
         System.out.println("Welcome to Eternal Quest!!");
 
-        while (true){
-            System.out.printf("\n1. %s - %s \n\n2. %s - %s\n\n3. %s - %s\n", character1, info1, character2, info2, character3, info3);
-        System.out.print("\nPick your character: ");
-        selection = userInput.nextLine();
-        
-            switch (selection){
+        while (true) {
+            System.out.printf("\n1. %s\n\n2. %s\n\n3. %s\n", elara.getName(), thorn.getName(), garrick.getName());
+            System.out.print("\nPick your character (1-3): ");
+            selection = userInput.nextLine();
+
+            switch (selection) {
                 case "1":
-                    chosenCharacter = character1;
+                    chosenCharacter = elara;
                     break;
                 case "2":
-                    chosenCharacter = character2;
+                    chosenCharacter = thorn;
                     break;
                 case "3":
-                    chosenCharacter = character3;
+                    chosenCharacter = garrick;
                     break;
                 default:
-                System.out.println("\nInvalid input, please choose either 1, 2, or 3.");
-                continue;
-        }
-        break;
+                    System.out.println("\nInvalid input, please choose either 1, 2, or 3.");
+                    continue;
+            }
+            break;
 
         }
 
-        System.out.println("\nYou picked " + chosenCharacter);
+        System.out.println("\nYou picked ");
+        chosenCharacter.displayinfo();
 
         userInput.close();
 
+        // System.out.println(chosenCharacter.name);
+
     }
-    
+
 }
